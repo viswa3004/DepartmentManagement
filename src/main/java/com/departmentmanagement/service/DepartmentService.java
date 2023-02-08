@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DepartmentService {
@@ -21,8 +22,11 @@ public class DepartmentService {
     public List<Department> getDepartments() {
 
         List<Department> departments = departmentDao.allDepartments();
-        //Long emp=employees.stream().filter(x->x.getEmpSal()==1000000).count();
-        return departments;
+        List<Department> deptStream = departments
+                .stream()
+                .filter(c -> c.getDeptName().length()>6 && c.getDeptType().contains("HR"))
+                .collect(Collectors.toList());
+        return deptStream;
     }
 
     public Department create(Department departments) {
