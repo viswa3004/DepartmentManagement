@@ -1,5 +1,9 @@
 # DepartmentManagement
 
+Creating DepartmentManagement RestAPI using springboot 3 , JPA and Swagger
+
+Database configuration
+
 CREATE DATABASE `employeemanagement`
 
 CREATE TABLE `department` (
