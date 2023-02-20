@@ -12,3 +12,6 @@ CREATE TABLE `department` (
   `depttype` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 )
+
+
+Adding Junit + Mockito test cases for the Application
